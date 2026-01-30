@@ -1,0 +1,29 @@
+{
+  "doctors": [
+    {
+      "name": "Dr. A. Rahman",
+      "dept": "General Medicine",
+      "title": "MBBS, RMO",
+      "hours": "Sun–Thu 10:00–13:00",
+      "bio": "Consultation for common illnesses and follow-up care."
+    },
+    {
+      "name": "Dr. S. Akter",
+      "dept": "Emergency Medicine",
+      "title": "MBBS",
+      "hours": "Sun–Thu 12:00–16:00",
+      "bio": "Urgent care and first aid coordination."
+    },
+    {
+      "name": "Dr. M. Chowdhury",
+      "dept": "Community Health",
+      "title": "MBBS",
+      "hours": "Sun–Wed 09:30–12:30",
+      "bio": "Preventive care and health education."
+    }
+  ],
+  "ambulances": [
+    { "id": "Amb-01", "status": "Available", "contact": "+880-XXX-XXXX" },
+    { "id": "Amb-02", "status": "On Duty", "contact": "+880-XXX-XXXX" }
+  ]
+}

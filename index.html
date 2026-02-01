@@ -32,7 +32,7 @@
 </head>
 <body>
   <!-- Skip link for keyboard users -->
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- <a class="skip-link" href="#main">Skip to main content</a> -->
   <header class="site-header" role="banner">
     <div class="container">
       <div class="branding">
@@ -47,6 +47,7 @@
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="doctors.html" class="nav-link">Doctors</a>
+        <a href="pharmacy.html" class="nav-link">Pharmacy</a>
         <a href="emergency.html" class="nav-link">Emergency</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="login.html" class="btn btn-primary">Login</a>
@@ -55,58 +56,49 @@
   </header>
 
   <main id="main" class="landing">
-    <section class="hero container">
-      <h1>CUET Campus Medical Center</h1>
-      <p>A unified system for Students, Doctors, and Admin to manage campus health services.</p>
-      <div class="cta">
-        <a href="login.html" class="btn btn-primary" aria-label="Get started by logging in">Get Started</a>
-        <a href="services.html" class="btn" aria-label="Explore services">Explore Services</a>
-      </div>
-    </section>
-
-    <section class="container">
-      <div class="panel grid-2" aria-labelledby="info-heading">
-        <div>
-          <h2 id="info-heading">At a glance</h2>
-          <div class="list">
-            <div class="item"><strong>Office Hours:</strong> Sun–Thu, 9:00 AM – 5:00 PM</div>
-            <div class="item"><strong>Location:</strong> CUET Campus Medical Center</div>
-            <div class="item"><strong>Email:</strong> medical@cuet.edu</div>
-          </div>
-        </div>
-        <div>
-          <h2>Emergency</h2>
-          <div class="list">
-            <div class="item"><strong>On-campus Emergency:</strong> 999</div>
-            <div class="item"><strong>Ambulance (Campus):</strong> +880-XXX-XXXX</div>
-            <div class="item"><a class="btn btn-primary" href="emergency.html">View Emergency Info</a></div>
-          </div>
+    <section class="hero">
+      <div class="hero-content container">
+        <h1>CUET Campus Medical Center</h1>
+        <p>A unified system for Students, Doctors, and Admin to manage campus health services.</p>
+        <div class="cta">
+          <a href="login.html" class="btn btn-primary" aria-label="Get started by logging in">Get Started</a>
+          <a href="services.html" class="btn" aria-label="Explore services">Explore Services</a>
         </div>
       </div>
     </section>
 
     <section id="features" class="features container">
-      <h2>Features</h2>
+      <h2>Quick Access</h2>
       <div class="card-grid">
         <a class="card" href="medical-records.html">
+          <div class="card-icon">📋</div>
           <h3>Medical Records</h3>
           <p>View diagnoses and prescriptions.</p>
         </a>
-        <a class="card" href="roster.html">
-          <h3>Doctor & Ambulance Roster</h3>
-          <p>Check availability and status.</p>
+        <a class="card" href="doctors.html">
+          <div class="card-icon">👨‍⚕️</div>
+          <h3>Doctors</h3>
+          <p>Browse doctor availability.</p>
+        </a>
+        <a class="card" href="pharmacy.html">
+          <div class="card-icon">💊</div>
+          <h3>Pharmacy</h3>
+          <p>View available medicines.</p>
+        </a>
+        <a class="card" href="emergency.html">
+          <div class="card-icon">🚑</div>
+          <h3>Emergency</h3>
+          <p>24/7 emergency contacts.</p>
         </a>
         <a class="card" href="donors.html">
-          <h3>Blood Donor System</h3>
-          <p>Register donors and track requests.</p>
-        </a>
-        <a class="card" href="notices.html">
-          <h3>Notices & Updates</h3>
-          <p>Public announcements and updates.</p>
+          <div class="card-icon">🩸</div>
+          <h3>Blood Donors</h3>
+          <p>Register as donor or search.</p>
         </a>
         <a class="card" href="assistant.html">
+          <div class="card-icon">🤖</div>
           <h3>AI Assistant</h3>
-          <p>Ask common health questions.</p>
+          <p>Ask health questions.</p>
         </a>
       </div>
     </section>

@@ -1,24 +1,45 @@
 // Simple client-side helpers
 (function() {
+  // Hardcoded admin credentials
+  const ADMIN_CREDENTIALS = {
+    username: 'admin',
+    password: 'admin123'
+  };
+
   // Handle login role redirect
   var form = document.getElementById('loginForm');
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var role = (document.querySelector('input[name="role"]:checked') || {}).value;
+      var userId = document.getElementById('userId').value.trim();
+      var password = document.getElementById('password').value.trim();
+      
       if (!role) {
         if (window.showToast) window.showToast('Please select a role.', 'warning');
         return;
       }
+
+      // Admin login validation
+      if (role === 'admin') {
+        if (userId === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+          localStorage.setItem('currentUser', JSON.stringify({ role: 'admin', username: userId }));
+          if (window.showToast) window.showToast('Welcome Admin!', 'success');
+          window.location.href = 'admin.html';
+        } else {
+          if (window.showToast) window.showToast('Invalid admin credentials.', 'warning');
+        }
+        return;
+      }
+
       if (window.showToast) window.showToast('Signing in (demo)...', 'success');
+      localStorage.setItem('currentUser', JSON.stringify({ role: role, username: userId }));
+      
       if (role === 'student') {
         window.location.href = 'student/dashboard.html';
       } else if (role === 'doctor') {
         // Redirect to existing doctors page in this workspace
         window.location.href = 'student/doctors.html';
-      } else if (role === 'admin') {
-        // No admin dashboard available in this demo
-        if (window.showToast) window.showToast('Admin dashboard is not available in this demo.', 'warning');
       }
     });
   }

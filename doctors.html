@@ -19,7 +19,6 @@
       </button>
       <nav id="topNav" class="top-nav" aria-label="Primary">
         <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
         <a href="doctors.html" class="nav-link">Doctors</a>
         <a href="pharmacy.html" class="nav-link">Pharmacy</a>
         <a href="emergency.html" class="nav-link">Emergency</a>
@@ -100,7 +99,51 @@
     (function(){
       const list = document.getElementById('doctors-list');
       const form = document.getElementById('doc-filter');
-      let data = [];
+      const data = [
+        {
+          name: 'Dr. Ayesha Rahman',
+          dept: 'General Medicine',
+          title: 'Consultant Physician',
+          hours: 'Sun-Thu, 9:00 AM - 1:00 PM',
+          bio: 'Focuses on fever, respiratory issues, and routine adult care for students and staff.'
+        },
+        {
+          name: 'Dr. Mahmud Hasan',
+          dept: 'Emergency Medicine',
+          title: 'Emergency Medical Officer',
+          hours: 'Sun-Thu, 2:00 PM - 8:00 PM',
+          bio: 'Handles urgent injuries, acute pain, and emergency stabilization before referral.'
+        },
+        {
+          name: 'Dr. Nusrat Jahan',
+          dept: 'Community Health',
+          title: 'Public Health Specialist',
+          hours: 'Mon-Wed, 10:00 AM - 3:00 PM',
+          bio: 'Leads preventive care, vaccination counseling, and student wellness sessions.'
+        },
+        {
+          name: 'Dr. Tareq Islam',
+          dept: 'General Medicine',
+          title: 'Senior Medical Officer',
+          hours: 'Sun-Thu, 11:00 AM - 4:00 PM',
+          bio: 'Treats common infections, gastric complaints, and follow-up chronic care cases.'
+        },
+        {
+          name: 'Dr. Sabiha Karim',
+          dept: 'Emergency Medicine',
+          title: 'Registrar, Emergency Unit',
+          hours: 'Fri-Sat, 8:00 AM - 2:00 PM',
+          bio: 'Supports weekend emergency triage and rapid response coordination.'
+        },
+        {
+          name: 'Dr. Imran Chowdhury',
+          dept: 'Community Health',
+          title: 'Medical Officer, Student Health',
+          hours: 'Sun-Thu, 9:30 AM - 2:30 PM',
+          bio: 'Works on lifestyle counseling, nutrition guidance, and campus outbreak monitoring.'
+        }
+      ];
+
       function render(){
         const dept = (document.getElementById('dept-select').value || '').toLowerCase();
         const q = (document.getElementById('doc-search').value || '').toLowerCase().trim();
@@ -117,14 +160,11 @@
             <div>${d.bio||''}</div>
           </div>`).join('') : '<div class="item">Nothing found.</div>';
       }
-      list.setAttribute('aria-busy', 'true');
-      list.innerHTML = '<div class="item skeleton" style="height:48px;"></div><div class="item skeleton" style="height:48px;"></div>';
-      fetch('assets/data/roster.json')
-        .then(r => { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-        .then(json => { data = json.doctors || []; render(); })
-        .catch(() => { list.innerHTML = '<div class="item">Failed to load doctors.</div>'; })
-        .finally(() => { list.removeAttribute('aria-busy'); });
+
+      render();
       form.addEventListener('submit', e => { e.preventDefault(); render(); });
+      document.getElementById('dept-select').addEventListener('change', render);
+      document.getElementById('doc-search').addEventListener('input', render);
     })();
   </script>
 </body>

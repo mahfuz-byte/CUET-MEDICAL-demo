@@ -455,3 +455,219 @@ input:invalid, select:invalid, textarea:invalid { border-color: rgba(239,68,68,.
 .top-nav .nav-link:hover { color: #fff; background: rgba(255,255,255,0.04); border-color: var(--border); }
 .top-nav .nav-link.active, .top-nav .nav-link[aria-current="page"] { color: #fff; background: linear-gradient(180deg, rgba(59,130,246,.14), rgba(37,99,235,.08)); border-color: rgba(59,130,246,.35); }
 .top-nav .nav-link:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); }
+
+/* Bed Availability Styles */
+.page-content { padding: 40px 0; }
+
+.page-header { text-align: center; margin-bottom: 40px; }
+.page-header h1 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 40px); color: #fff; }
+.page-header .muted { font-size: 16px; }
+
+/* Bed Summary Cards */
+.bed-summary { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px; 
+  margin-bottom: 50px; 
+}
+
+.summary-card { 
+  background: var(--card); 
+  border: 1px solid var(--border); 
+  border-radius: 16px; 
+  padding: 24px; 
+  text-align: center;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.summary-card:hover { 
+  transform: translateY(-4px); 
+  border-color: rgba(59,130,246,.5); 
+}
+
+.summary-card.available { 
+  background: linear-gradient(135deg, rgba(16,185,129,.15) 0%, rgba(5,150,105,.1) 100%);
+  border-color: rgba(16,185,129,.3);
+}
+
+.summary-card.occupied { 
+  background: linear-gradient(135deg, rgba(239,68,68,.15) 0%, rgba(220,38,38,.1) 100%);
+  border-color: rgba(239,68,68,.3);
+}
+
+.summary-label { 
+  font-size: 14px; 
+  color: var(--muted); 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+  margin-bottom: 10px; 
+}
+
+.summary-value { 
+  font-size: 36px; 
+  font-weight: 700; 
+  color: #fff; 
+}
+
+.summary-card.available .summary-value { color: #10b981; }
+.summary-card.occupied .summary-value { color: #ef4444; }
+
+/* Beds Section */
+.beds-section { margin-bottom: 40px; }
+.beds-section h2 { 
+  font-size: 24px; 
+  margin-bottom: 24px; 
+  color: #fff; 
+}
+
+.beds-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 24px; 
+}
+
+/* Bed Card */
+.bed-card { 
+  background: var(--card); 
+  border: 1px solid var(--border); 
+  border-radius: 16px; 
+  padding: 24px; 
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.bed-card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 12px 40px rgba(59,130,246,0.15); 
+  border-color: rgba(59,130,246,.5); 
+}
+
+.bed-card-header { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  margin-bottom: 20px; 
+}
+
+.bed-icon { 
+  font-size: 32px; 
+}
+
+.bed-card-header h3 { 
+  font-size: 18px; 
+  margin: 0; 
+  color: #fff; 
+  font-weight: 600; 
+}
+
+/* Bed Stats */
+.bed-stats { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 16px; 
+  margin-bottom: 20px; 
+}
+
+.bed-stat { 
+  text-align: center; 
+}
+
+.bed-stat .stat-label { 
+  display: block; 
+  font-size: 12px; 
+  color: var(--muted); 
+  margin-bottom: 6px; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
+}
+
+.bed-stat .stat-value { 
+  display: block; 
+  font-size: 24px; 
+  font-weight: 700; 
+  color: #fff; 
+}
+
+.stat-available { color: #10b981 !important; }
+.stat-occupied { color: #ef4444 !important; }
+
+/* Progress Bar */
+.bed-progress { 
+  margin-bottom: 16px; 
+}
+
+.progress-bar { 
+  height: 8px; 
+  background: rgba(255,255,255,0.08); 
+  border-radius: 999px; 
+  overflow: hidden; 
+  margin-bottom: 8px; 
+}
+
+.progress-fill { 
+  height: 100%; 
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600)); 
+  border-radius: 999px; 
+  transition: width .3s ease; 
+}
+
+.progress-label { 
+  font-size: 12px; 
+  color: var(--muted); 
+}
+
+/* Bed Status Badge */
+.bed-status { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 8px 16px; 
+  border-radius: 8px; 
+  font-size: 14px; 
+  font-weight: 600; 
+  width: 100%; 
+}
+
+.bed-status.good { 
+  background: rgba(16,185,129,.15); 
+  color: #10b981; 
+  border: 1px solid rgba(16,185,129,.3); 
+}
+
+.bed-status.limited { 
+  background: rgba(251,191,36,.15); 
+  color: #fbbf24; 
+  border: 1px solid rgba(251,191,36,.3); 
+}
+
+.bed-status.full { 
+  background: rgba(239,68,68,.15); 
+  color: #ef4444; 
+  border: 1px solid rgba(239,68,68,.3); 
+}
+
+/* Last Updated */
+.last-updated { 
+  text-align: center; 
+  margin-top: 40px; 
+  padding-top: 20px; 
+  border-top: 1px solid var(--border); 
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .bed-summary { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  .beds-grid { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .bed-stats { 
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  
+  .summary-value { 
+    font-size: 28px; 
+  }
+}
